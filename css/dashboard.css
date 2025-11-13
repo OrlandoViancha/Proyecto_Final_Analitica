@@ -1,0 +1,49 @@
+/* ================== ESTILOS DE LA PÁGINA DASHBOARD ================== */
+
+.dashboard-section {
+    background: var(--color-gris-fondo); /* Fondo gris claro para un contraste limpio */
+    padding: 3rem 0;
+    min-height: 85vh; /* Asegura que la sección ocupe al menos la mayor parte de la pantalla */
+}
+
+.dashboard-section h2 {
+    text-align: center;
+    color: var(--color-azul-oscuro);
+    margin-bottom: 2rem;
+}
+
+.powerbi-embed {
+    /* Contenedor del Iframe */
+    background: var(--color-blanco);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px; /* Un poco de padding alrededor del dashboard */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.powerbi-embed iframe {
+    /* El iframe debe ocupar el 100% del ancho del contenedor */
+    display: block;
+    border: none;
+}
+
+/* Regla para el mensaje de placeholder */
+.powerbi-embed p {
+    text-align: center;
+    color: #666;
+    padding: 5rem 0;
+    font-style: italic;
+}
+
+
+/* Adaptación para móviles si el iframe es muy grande */
+@media (max-width: 768px) {
+    .dashboard-section {
+        padding: 1.5rem 0;
+    }
+    
+    .powerbi-embed iframe {
+        /* Reduce la altura en móviles si es necesario para evitar demasiado scroll */
+        height: 500px !important; 
+    }
+}

@@ -1,0 +1,333 @@
+/* ================== VARIABLES Y RESET ================== */
+:root {
+    --color-azul-oscuro: #003366; /* Azul institucional */
+    --color-azul-medio: #005a9c;
+    --color-verde-cta: #28a745;   /* Verde para botones */
+    --color-teal-card: #00897b;   /* Verde azulado para tarjetas */
+    --color-texto: #333;
+    --color-blanco: #ffffff;
+    --color-gris-fondo: #f4f7f6;
+    --color-texto-footer: #cce0ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+h1 { font-size: 2.8rem; }
+h2 { font-size: 2.2rem; }
+h3 { font-size: 1.2rem; }
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-azul-medio);
+}
+
+/* ================== HEADER (MODIFICADO para IMG logo) ================== */
+header {
+    background: var(--color-blanco);
+    border-bottom: 1px solid #eee;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    /* El div .logo ya no necesita propiedades de flexbox ni colores de texto
+       porque ahora contiene una imagen. */
+    display: block; /* Para que la imagen dentro se comporte bien */
+}
+
+/* NUEVA REGLA PARA EL TAMAÑO DEL LOGO IMAGEN */
+.logo-img {
+    max-height: 80px; /* Define la altura máxima de tu logo */
+    width: auto;     /* Mantiene la proporción */
+    display: block;  /* Asegura que no tenga espacio extra inferior */
+}
+/* Fin de las reglas nuevas */
+
+
+/* Las reglas para .logo i y el texto del logo ya no son necesarias si usamos una imagen */
+/* .logo i {
+    font-size: 2rem;
+    color: var(--color-azul-medio);
+    margin-right: 0.5rem;
+} */
+
+
+/* --- REGLAS DE 'nav' ELIMINADAS --- */
+
+
+/* ================== HERO SECTION ================== */
+.hero {
+    /* Reemplaza esto con tu imagen de fondo */
+    background: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 51, 102, 0.7)), 
+                url('https://via.placeholder.com/1500x600.png?text=Paisaje+Sabana+de+Bogot%C3%A1') no-repeat center center/cover;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--color-blanco);
+    padding: 2rem;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+}
+
+.hero-cards {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap; /* Para pantallas más pequeñas */
+}
+
+.hero-card {
+    background: var(--color-teal-card);
+    padding: 1.5rem;
+    border-radius: 8px;
+    min-width: 200px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.hero-card span {
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.hero-card .data {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+/* ================== INTRO & FEATURES ================== */
+.intro-features {
+    padding: 4rem 2rem;
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+.intro-text {
+    flex-basis: 40%;
+}
+
+.features-grid {
+    flex-basis: 60%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.features-grid h2 {
+    grid-column: 1 / -1; /* Título abarca las 2 columnas */
+}
+
+.feature-item {
+    background: var(--color-gris-fondo);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 5px solid var(--color-verde-cta);
+}
+
+.feature-item i {
+    font-size: 2rem;
+    color: var(--color-verde-cta);
+    margin-bottom: 1rem;
+}
+
+.feature-item h3 {
+    color: var(--color-azul-oscuro);
+}
+
+/* ================== MAIN CTA (MODIFICADO) ================== */
+.cta-main {
+    background: var(--color-azul-oscuro);
+    color: var(--color-blanco);
+    text-align: center;
+    padding: 4rem 2rem;
+    /* Ajuste para centrar el contenido verticalmente si es necesario,
+       aunque text-align: center ya centra horizontalmente los elementos inline-block */
+    display: flex; /* Usamos flexbox para una mejor alineación */
+    flex-direction: column; /* Apila los elementos verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+}
+
+.cta-main .container { /* Asegurarse que el container también sea flexible */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Asegura que tome el ancho completo del padre */
+}
+
+
+.dashboard-preview {
+    max-width: 600px;
+    width: 100%;
+    border-radius: 8px;
+    border: 3px solid var(--color-blanco);
+    margin: 2rem 0; /* Margen superior e inferior para separar */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.cta-button {
+    display: inline-block;
+    background: var(--color-verde-cta);
+    color: var(--color-blanco);
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #218838;
+}
+
+/* ================== INSTITUTIONAL ================== */
+.institutional {
+    padding: 4rem 2rem;
+    text-align: center;
+    background: var(--color-blanco);
+}
+
+.institutional p {
+    max-width: 700px;
+    margin: 0 auto 2rem auto;
+}
+
+.logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    filter: grayscale(100%);
+    opacity: 0.7;
+}
+
+.logos img {
+    max-width: 150px;
+}
+
+/* ================== FOOTER ================== */
+footer {
+    background: var(--color-azul-oscuro);
+    color: var(--color-texto-footer);
+    padding: 3rem 0;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 700;
+    /* Ajuste si quieres dar un tamaño específico al logo del footer */
+    /* Por ejemplo, si también usas una imagen aquí, podrías querer un max-height */
+}
+/* Aquí puedes añadir una clase si quieres estilizar específicamente el logo del footer como imagen */
+/* Por ahora, usé un estilo inline en el HTML para el footer, pero una clase CSS es mejor: */
+/* .footer-logo img { max-height: 40px; width: auto; } */
+
+.footer-logo i { /* Esta regla ya no aplica si se reemplazó el ícono por una imagen */
+    font-size: 2rem;
+    margin-right: 0.5rem;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-links a {
+    color: var(--color-texto-footer);
+}
+
+.footer-links a:hover {
+    color: var(--color-blanco);
+}
+
+.footer-copy {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* ================== RESPONSIVE DESIGN (MODIFICADO) ================== */
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+
+    .hero {
+        height: auto;
+        padding: 4rem 2rem;
+    }
+
+    .hero-cards {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .intro-features {
+        flex-direction: column;
+        padding: 2rem;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    footer .container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
